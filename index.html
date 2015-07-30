@@ -1,0 +1,47 @@
+<html>
+  <head>
+    <title>Space Invaders</title>
+    <link href='http://fonts.googleapis.com/css?family=Press+Start+2P' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="js/jquery-2.1.4.js"></script>
+  </head>
+
+  <body >
+    <section class="game group">
+      <section class="game-info">
+        <h1>SPACE INVADERS</h1>
+        <h2>SCORE: <span id="score"></span></h2>
+        <h2>LIVES: <span id="lives"></span></h2>
+        <h2>LEVEL: <span id="level"></span></h2>
+
+    </section>
+      <canvas></canvas>
+
+  </section>
+
+
+    <script type="application/javascript" src="lib/input.js"></script>
+    <script type="application/javascript" src="lib/util.js"></script>
+    <script type="application/javascript" src="lib/movingObject.js"></script>
+    <script type="application/javascript" src="lib/enemy.js"></script>
+    <script type="application/javascript" src="lib/star.js"></script>
+    <script type="application/javascript" src="lib/ship.js"></script>
+    <script type="application/javascript" src="lib/bullet.js"></script>
+    <script type="application/javascript" src="lib/laser.js"></script>
+    <script type="application/javascript" src="lib/game.js"></script>
+    <script type="application/javascript" src="lib/gameView.js"></script>
+
+
+    <script type="application/javascript">
+      (function () {
+        var canvasEl = document.getElementsByTagName("canvas")[0];
+        canvasEl.width = SpaceInvaders.Game.DIM_X;
+        canvasEl.height = SpaceInvaders.Game.DIM_Y;
+
+        var ctx = canvasEl.getContext("2d");
+        var game = new SpaceInvaders.Game();
+        new SpaceInvaders.GameView(game, ctx).start();
+      })();
+    </script>
+  </body>
+</html>
