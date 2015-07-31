@@ -26,16 +26,60 @@ html, body, header, nav, h1, a,
    list-style:none;
  }
 
-.group{
+.group:after{
   display:block;
   content: "";
   clear:both;
-}
-
-canvas{
 
 }
-.game-info, .instructions{
+.game-info-list{
+  margin-top:20px;
+}
+.game-info-list li{
+  float:left;
+  margin-right:20px;
+}
+
+.game-info{
+  display:none;
+}
+
+.game-info-list li.lives{
+  float:right;
+}
+
+.game-info-list li span{
+  color: #00fc42;
+}
+
+.instructions h1, .game-over h1{
+  font-size:36px;
+  text-align:center;
+  margin-bottom:40px;
+}
+
+.instructions figure{
+  width:650px;
+  margin:0 auto;
+}
+
+.canvas{
+  position:relative;
+}
+
+.game-over{
+  padding-top:20px;
+  position:absolute;
+  top:440;
+  display:none;
+}
+
+.instructions h3, .game-over h3{
+  font-size:24px;
+    text-align:center;
+    margin-bottom:20px;
+}
+.game-info, .instructions, .game-over{
   width:1000px;
   background:#000;
   padding:20px;
@@ -50,6 +94,7 @@ h2{
   margin-top:10px;
 }
 
+
 button{
   display:block;
   width:200px;
@@ -57,11 +102,13 @@ button{
   text-align:center;
   border:5px #fff solid;
   padding:20px;
-  margin-top:20px;
+  margin-top:40px;
+  margin-bottom:20px;
   cursor:pointer;
 }
 
 button:hover{
-  background:#fff;
+  background:#00fc42;
+  border: #00fc42 5px solid;
   color:#000;
 }

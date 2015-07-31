@@ -9,17 +9,19 @@
   <body >
     <section class="game group">
       <section class="game-info">
-              <h1>SPACE INVADERS</h1>
-        <ul class="game-info-list group">
 
-        <li>SCORE: <span id="score"></span></li>
-        <li>LIVES: <span id="lives"></span></li>
-        <li>LEVEL: <span id="level"></span></li>
+        <ul class="game-info-list group">
+        <li>SCORE <span id="score">0</span></li>
+        <li class="lives">LIVES <span id="lives">0</span></li>
+
       </ul>
 
     </section>
 
     <section class="instructions">
+      <h1>SPACE INVADERS</h1>
+      <figure><img src="img/aliens.png"></figure>
+      <h3>Instructions: </h3>
       <ul class="instructions-list">
         <li>Use the "a" or left arrow key to move left.</li>
         <li>Use the "d" or right arrow key to move right.</li>
@@ -27,8 +29,15 @@
       </ul>
       <button id="start-game">PLAY</button>
     </section>
-      <canvas></canvas>
 
+      <canvas>
+      </canvas>
+      <section class="game-over">
+        <h1>GAME OVER</h1>
+
+        <h3>Play again?</h3>
+        <button id="restart-game">REPLAY</button>
+      </section>
   </section>
 
 
@@ -53,6 +62,7 @@
         var ctx = canvasEl.getContext("2d");
 
         $("#start-game").on("click", function(){
+          $(".game-info").css("display", "block");
           $(".instructions").css("display", "none");
           var game = new SpaceInvaders.Game();
           new SpaceInvaders.GameView(game, ctx).start();
