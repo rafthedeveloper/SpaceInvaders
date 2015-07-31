@@ -22,6 +22,10 @@ html, body, header, nav, h1, a,
    box-sizing:border-box;
  }
 
+ ul{
+   list-style:none;
+ }
+
 .group{
   display:block;
   content: "";
@@ -31,12 +35,33 @@ html, body, header, nav, h1, a,
 canvas{
 
 }
-.game-info{
+.game-info, .instructions{
   width:1000px;
   background:#000;
   padding:20px;
 }
 
+.instructions-list li{
+  text-align:center;
+  margin-bottom:10px;
+}
+
 h2{
   margin-top:10px;
+}
+
+button{
+  display:block;
+  width:200px;
+  margin:0 auto;
+  text-align:center;
+  border:5px #fff solid;
+  padding:20px;
+  margin-top:20px;
+  cursor:pointer;
+}
+
+button:hover{
+  background:#fff;
+  color:#000;
 }
