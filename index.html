@@ -44,7 +44,7 @@
     <script type="application/javascript" src="lib/input.js"></script>
     <script type="application/javascript" src="lib/util.js"></script>
     <script type="application/javascript" src="lib/movingObject.js"></script>
-    <script type="application/javascript" src="lib/enemy.js"></script>
+    <script type="application/javascript" src="lib/alien.js"></script>
     <script type="application/javascript" src="lib/star.js"></script>
     <script type="application/javascript" src="lib/ship.js"></script>
     <script type="application/javascript" src="lib/projectiles/bullet.js"></script>
@@ -64,7 +64,7 @@
         $("#start-game").on("click", function(){
           $(".game-info").css("display", "block");
           $(".instructions").css("display", "none");
-          var game = new SpaceInvaders.Game();
+          var game = new SpaceInvaders.Game(ctx);
           new SpaceInvaders.GameView(game, ctx).start();
         })
 

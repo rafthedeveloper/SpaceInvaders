@@ -65,6 +65,7 @@ html, body, header, nav, h1, a,
 
 .canvas{
   position:relative;
+  font-family: 'Press Start 2P', cursive;
 }
 
 .game-over{
