@@ -1,0 +1,74 @@
+<html>
+  <head>
+    <title>Space Invaders</title>
+    <link href='http://fonts.googleapis.com/css?family=Press+Start+2P' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="js/jquery-2.1.4.js"></script>
+  </head>
+
+  <body >
+    <section class="game group">
+      <section class="game-info">
+
+        <ul class="game-info-list group">
+        <li>SCORE <span id="score">0</span></li>
+        <li class="lives">LIVES <span id="lives">0</span></li>
+
+      </ul>
+
+    </section>
+
+    <section class="instructions">
+      <h1>SPACE INVADERS</h1>
+      <figure><img src="img/aliens.png"></figure>
+      <h3>Instructions: </h3>
+      <ul class="instructions-list">
+        <li>Use the "a" or left arrow key to move left.</li>
+        <li>Use the "d" or right arrow key to move right.</li>
+        <li>Press the spacebar to shoot the enemies!</li>
+      </ul>
+      <button id="start-game">PLAY</button>
+    </section>
+
+      <canvas>
+      </canvas>
+      <section class="game-over">
+        <h1>GAME OVER</h1>
+
+        <h3>Play again?</h3>
+        <button id="restart-game">REPLAY</button>
+      </section>
+  </section>
+
+
+    <script type="application/javascript" src="lib/input.js"></script>
+    <script type="application/javascript" src="lib/util.js"></script>
+    <script type="application/javascript" src="lib/movingObject.js"></script>
+    <script type="application/javascript" src="lib/alien.js"></script>
+    <script type="application/javascript" src="lib/star.js"></script>
+    <script type="application/javascript" src="lib/ship.js"></script>
+    <script type="application/javascript" src="lib/projectiles/bullet.js"></script>
+    <script type="application/javascript" src="lib/projectiles/laser.js"></script>
+    <script type="application/javascript" src="lib/game.js"></script>
+    <script type="application/javascript" src="lib/gameView.js"></script>
+
+
+    <script type="application/javascript">
+      (function () {
+        var canvasEl = document.getElementsByTagName("canvas")[0];
+        canvasEl.width = SpaceInvaders.Game.DIM_X;
+        canvasEl.height = SpaceInvaders.Game.DIM_Y;
+
+        var ctx = canvasEl.getContext("2d");
+
+        $("#start-game").on("click", function(){
+          $(".game-info").css("display", "block");
+          $(".instructions").css("display", "none");
+          var game = new SpaceInvaders.Game(ctx);
+          new SpaceInvaders.GameView(game, ctx).start();
+        })
+
+      })();
+    </script>
+  </body>
+</html>
